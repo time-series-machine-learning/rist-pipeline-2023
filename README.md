@@ -41,8 +41,13 @@ dependencies:
 
     pip install -r requirements.txt
 
-For a smaller install, use `pip install tsml-eval tsml` and add the dependencies for
-individual estimators as required. RIST requires `statsmodels`.
+This is the same as:
+
+    pip install tsml-eval[all_extras,deep_learning]
+
+Not all estimator dependencies are installed by default with `pip install tsml-eval`.
+For a smaller install, you can install these individually as required. RIST requires
+`statsmodels`.
 
 Run [run_classification_experiments.py](run_classification_experiments.py) or
 [run_regression_experiments.py](run_regression_experiments.py) from the repository
@@ -106,4 +111,12 @@ The estimators used in the experiments are available in the
 [aeon](https://github.com/aeon-toolkit/aeon) and
 [tsml](https://github.com/time-series-machine-learning/tsml-py) Python packages and
 follow the `scikit-learn` interface. See [rist_pipeline.ipynb](rist_pipeline.ipynb)
-for an example.
+for an example, which can be run online using Binder:
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/time-series-machine-learning/rist-pipeline-2023/main?filepath=rist_pipeline.ipynb)
+
+## Contact
+
+For questions about the paper or this repository, contact Matthew Middlehurst at
+[m.b.middlehurst@bradford.ac.uk](mailto:m.b.middlehurst@bradford.ac.uk) or on the
+[aeon Discord](https://discord.gg/D6rzqHGKRJ).
