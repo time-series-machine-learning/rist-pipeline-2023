@@ -14,7 +14,8 @@ The paper is available from
 | Path | Description |
 |---|---|
 | [results/classification](results/classification) | Accuracy for each classifier on the 112 UCR datasets, one column per resample |
-| [results/regression](results/regression) | RMSE for each regressor on the 63 regression datasets, one column per resample |
+| [results/regression](results/regression) | RMSE for each regressor on the 55 regression datasets used in the paper, one column per resample |
+| [figures](figures) | Figures generated from the results files |
 | [set_rist_classifier.py](set_rist_classifier.py), [set_rist_regressor.py](set_rist_regressor.py) | The estimator configurations used in the experiments |
 | [run_classification_experiments.py](run_classification_experiments.py), [run_regression_experiments.py](run_regression_experiments.py) | Scripts to run a single experiment |
 | [rist_pipeline.ipynb](rist_pipeline.ipynb) | Example of using the RIST classifier and regressor directly |
@@ -31,12 +32,13 @@ The 63 regression datasets are available from the
 [TSER archive expansion webpage](https://tsml-eval.readthedocs.io/en/latest/publications/2023/tser_archive_expansion/tser_archive_expansion.html)
 and on Zenodo as the
 [TSML Extended Time Series Extrinsic Regression Archive 2024](https://zenodo.org/records/11236865).
+The paper uses 55 of these datasets.
 
 ## Running the experiments
 
-There are two ways to run the code. The published results were generated with the
-versions described in [As published](#as-published). Results from current versions
-may differ, as the algorithms have changed since publication.
+There are two ways to run the code: with the latest versions, or with the versions
+recorded at the time of publication. Results from the latest versions may differ from
+the published results files, as the algorithms have changed since publication.
 
 ### Latest versions
 
@@ -78,10 +80,11 @@ new releases.
 
 ### As published
 
-The experiments for the paper were run from the `tsml-eval` source using `aeon` 0.3.0
-and `tsml` 0.2.1. The code in this repository has since been updated for newer
-versions, so to run the original code use the `tsml-eval` repository at the last
-commit which used these versions. This requires Python 3.8 to 3.11.
+The dependency versions recorded at the time of publication include `aeon` 0.3.0 and
+`tsml` 0.2.1. The code in this repository has since been updated for newer versions,
+so to run the code from that time use the `tsml-eval` repository at the last commit
+which used these versions. This requires Python 3.8 to 3.11. Results from this setup
+are close to the published results files but may not match them exactly.
 
     git clone https://github.com/time-series-machine-learning/tsml-eval.git
     cd tsml-eval
