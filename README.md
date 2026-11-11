@@ -5,10 +5,6 @@ Pipeline for Time Series Classification and Extrinsic Regression" from the
 International Workshop on Advanced Analytics and Learning on Temporal Data (AALTD)
 2023, which introduces the RIST pipeline.
 
-This material was previously part of
-[tsml-eval](https://github.com/time-series-machine-learning/tsml-eval) under
-`tsml_eval/publications/y2023/rist_pipeline`.
-
 ## Contents
 
 | Path | Description |
@@ -24,9 +20,13 @@ This material was previously part of
 
 The 112 UCR archive datasets are available at
 [timeseriesclassification.com](http://www.timeseriesclassification.com/dataset.php).
+The full archive is also on Zenodo as the
+[UCR Time Series Classification Archive 2018](https://zenodo.org/records/11198697).
 
 The 63 regression datasets are available from the
-[TSER archive expansion webpage](https://tsml-eval.readthedocs.io/en/latest/publications/2023/tser_archive_expansion/tser_archive_expansion.html).
+[TSER archive expansion webpage](https://tsml-eval.readthedocs.io/en/latest/publications/2023/tser_archive_expansion/tser_archive_expansion.html)
+and on Zenodo as the
+[TSML Extended Time Series Extrinsic Regression Archive 2024](https://zenodo.org/records/11236865).
 
 ## Running the experiments
 
