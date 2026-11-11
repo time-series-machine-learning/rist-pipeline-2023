@@ -4,12 +4,12 @@ import os
 import runpy
 import sys
 
+from tsml_eval.testing.testing_utils import _TEST_DATA_PATH
 from tsml_eval.utils.results_validation import validate_results_file
 
 from run_classification_experiments import (
     _REPO_PATH,
     _RIST_TEST_RESULTS_PATH,
-    _TEST_DATA_PATH,
     _run_classification_experiment,
 )
 from run_regression_experiments import _run_regression_experiment

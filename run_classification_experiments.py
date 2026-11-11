@@ -12,13 +12,13 @@ os.environ["OMP_NUM_THREADS"] = "1"  # must be done before numpy import!!
 from aeon.base._base import _clone_estimator
 
 from tsml_eval.experiments import load_and_run_classification_experiment
+from tsml_eval.testing.testing_utils import _TEST_DATA_PATH
 from tsml_eval.utils.arguments import parse_args
 from tsml_eval.utils.experiments import _results_present
 
 from set_rist_classifier import _set_rist_classifier
 
 _REPO_PATH = os.path.dirname(os.path.abspath(__file__))
-_TEST_DATA_PATH = f"{_REPO_PATH}/tests/data/"
 _RIST_TEST_RESULTS_PATH = f"{_REPO_PATH}/test_output/"
 
 classifiers = [

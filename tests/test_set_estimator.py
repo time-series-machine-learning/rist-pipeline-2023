@@ -1,27 +1,30 @@
 """Tests for publication experiments estimator selection."""
 
 import pytest
-from sklearn.base import BaseEstimator
+from tsml_eval.testing.testing_utils import _check_set_method, _check_set_method_results
 
 from set_rist_classifier import _set_rist_classifier, rist_classifiers
 from set_rist_regressor import _set_rist_regressor, rist_regressors
 
 
-def _names(estimator_names):
-    names = []
-    for n in estimator_names:
-        names.extend([n] if isinstance(n, str) else n)
-    return names
-
-
-@pytest.mark.parametrize("name", _names(rist_classifiers))
-def test_set_rist_classifier(name):
+def test_set_rist_classifier():
     """Test set_rist_classifier method."""
-    try:
-        classifier = _set_rist_classifier(name)
-    except ModuleNotFoundError as err:
-        pytest.skip(f"Optional dependency not installed: {err}")
-    assert isinstance(classifier, BaseEstimator)
+    classifier_list = []
+    classifier_dict = {}
+    all_classifier_names = []
+    _check_set_method(
+        _set_rist_classifier,
+        rist_classifiers,
+        classifier_list,
+        classifier_dict,
+        all_classifier_names,
+    )
+
+    _check_set_method_results(
+        classifier_dict,
+        estimator_name="Classifiers",
+        method_name="_set_rist_classifier",
+    )
 
 
 def test_set_rist_classifier_invalid():
@@ -30,14 +33,22 @@ def test_set_rist_classifier_invalid():
         _set_rist_classifier("invalid")
 
 
-@pytest.mark.parametrize("name", _names(rist_regressors))
-def test_set_rist_regressor(name):
-    """Test set_rist_regressor method."""
-    try:
-        regressor = _set_rist_regressor(name)
-    except ModuleNotFoundError as err:
-        pytest.skip(f"Optional dependency not installed: {err}")
-    assert isinstance(regressor, BaseEstimator)
+def test_set_rist_regressor():
+    """Test set_rist_regressors method."""
+    regressor_list = []
+    regressor_dict = {}
+    all_regressor_names = []
+    _check_set_method(
+        _set_rist_regressor,
+        rist_regressors,
+        regressor_list,
+        regressor_dict,
+        all_regressor_names,
+    )
+
+    _check_set_method_results(
+        regressor_dict, estimator_name="Regressors", method_name="_set_rist_regressor"
+    )
 
 
 def test_set_rist_regressor_invalid():

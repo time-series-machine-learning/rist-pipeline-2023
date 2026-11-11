@@ -60,8 +60,8 @@ train/test split:
 
     python run_classification_experiments.py data/ results/ RIST ItalyPowerDemand 0
 
-Running either script without arguments runs ROCKET on a small example dataset from
-[tests/data](tests/data) and writes to `test_output/`.
+Running either script without arguments runs ROCKET on a small example dataset
+included with `tsml-eval` and writes to `test_output/`.
 
 The code in this repository was last checked in November 2026 with `tsml-eval` 0.7.0,
 `aeon` 1.5.0 and `tsml` 0.10.0 on Python 3.12. It is not actively maintained against
