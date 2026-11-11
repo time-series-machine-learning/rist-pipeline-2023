@@ -5,6 +5,10 @@ Pipeline for Time Series Classification and Extrinsic Regression" from the
 International Workshop on Advanced Analytics and Learning on Temporal Data (AALTD)
 2023, which introduces the RIST pipeline.
 
+The paper is available from
+[Springer](https://doi.org/10.1007/978-3-031-49896-1_8) and as a
+[PDF on the workshop website](https://ecml-aaltd.github.io/aaltd2023/papers/AALTD_2023_Hybrid_Pipeline.pdf).
+
 ## Contents
 
 | Path | Description |
@@ -114,6 +118,24 @@ follow the `scikit-learn` interface. See [rist_pipeline.ipynb](rist_pipeline.ipy
 for an example, which can be run online using Binder:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/time-series-machine-learning/rist-pipeline-2023/main?filepath=rist_pipeline.ipynb)
+
+## Citation
+
+If you use this work, please cite the paper:
+
+```bibtex
+@inproceedings{middlehurst2023extracting,
+  title={Extracting Features from Random Subseries: A Hybrid Pipeline for Time Series Classification and Extrinsic Regression},
+  author={Middlehurst, Matthew and Bagnall, Anthony},
+  booktitle={International Workshop on Advanced Analytics and Learning on Temporal Data},
+  series={Lecture Notes in Computer Science},
+  volume={14343},
+  pages={113--126},
+  year={2023},
+  publisher={Springer},
+  doi={10.1007/978-3-031-49896-1_8}
+}
+```
 
 ## Contact
 
