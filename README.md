@@ -14,9 +14,7 @@ The paper is available from
 | Path | Description |
 |---|---|
 | [results/classification](results/classification) | Accuracy for each classifier on the 112 UCR datasets, one column per resample |
-| [results/regression](results/regression) | RMSE for each regressor on the 55 regression datasets used in the paper, one column per resample |
-| [figures](figures) | Figures generated from the results files |
-| [set_rist_classifier.py](set_rist_classifier.py), [set_rist_regressor.py](set_rist_regressor.py) | The estimator configurations used in the experiments |
+| [results/regression](results/regression) | RMSE for each regressor on the 55 regression datasets used in the paper, one column per resample || [set_rist_classifier.py](set_rist_classifier.py), [set_rist_regressor.py](set_rist_regressor.py) | The estimator configurations used in the experiments |
 | [run_classification_experiments.py](run_classification_experiments.py), [run_regression_experiments.py](run_regression_experiments.py) | Scripts to run a single experiment |
 | [rist_pipeline.ipynb](rist_pipeline.ipynb) | Example of using the RIST classifier and regressor directly |
 | [static_publication_reqs.txt](static_publication_reqs.txt) | Dependency versions used at the time of publication |
