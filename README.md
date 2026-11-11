@@ -119,4 +119,4 @@ for an example, which can be run online using Binder:
 
 For questions about the paper or this repository, contact Matthew Middlehurst at
 [m.b.middlehurst@bradford.ac.uk](mailto:m.b.middlehurst@bradford.ac.uk) or on the
-[aeon Discord](https://discord.gg/D6rzqHGKRJ).
+[aeon Discord](https://discord.gg/D6rzqHGKRJ) (`matthewmiddlehurst`).
