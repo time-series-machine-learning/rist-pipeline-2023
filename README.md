@@ -28,7 +28,7 @@ The full archive is also on Zenodo as the
 [UCR Time Series Classification Archive 2018](https://zenodo.org/records/11198697).
 
 The 63 regression datasets are available from the
-[TSER archive expansion webpage](https://tsml-eval.readthedocs.io/en/latest/publications/2023/tser_archive_expansion/tser_archive_expansion.html)
+[TSER archive expansion repository](https://github.com/time-series-machine-learning/tser-archive-expansion-2024#datasets)
 and on Zenodo as the
 [TSML Extended Time Series Extrinsic Regression Archive 2024](https://zenodo.org/records/11236865).
 The paper uses 55 of these datasets.
