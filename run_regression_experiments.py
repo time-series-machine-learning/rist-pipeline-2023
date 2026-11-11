@@ -14,13 +14,14 @@ os.environ["TF_NUM_INTRAOP_THREADS"] = "1"
 from aeon.base._base import _clone_estimator
 
 from tsml_eval.experiments import load_and_run_regression_experiment
-from tsml_eval.publications.y2023.rist_pipeline.set_rist_regressor import (
-    _set_rist_regressor,
-)
-from tsml_eval.publications.y2023.rist_pipeline.tests import _RIST_TEST_RESULTS_PATH
-from tsml_eval.testing.testing_utils import _TEST_DATA_PATH
 from tsml_eval.utils.arguments import parse_args
 from tsml_eval.utils.experiments import _results_present
+
+from set_rist_regressor import _set_rist_regressor
+
+_REPO_PATH = os.path.dirname(os.path.abspath(__file__))
+_TEST_DATA_PATH = f"{_REPO_PATH}/tests/data/"
+_RIST_TEST_RESULTS_PATH = f"{_REPO_PATH}/test_output/"
 
 regressors = [
     "InceptionTime",
