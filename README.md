@@ -65,10 +65,10 @@ root with the following arguments:
 4. The name of the problem to run
 5. The resample number to run (0 is base train/test split)
 
-i.e. to run the ItalyPowerDemand classification problem using RIST on the base
-train/test split:
+i.e. to run the GunPoint classification problem using RIST on the base train/test
+split:
 
-    python run_classification_experiments.py data/ results/ RIST ItalyPowerDemand 0
+    python run_classification_experiments.py data/ results/ RIST GunPoint 0
 
 Running either script without arguments runs ROCKET on a small example dataset
 included with `tsml-eval` and writes to `test_output/`.
@@ -82,7 +82,7 @@ new releases.
 The dependency versions recorded at the time of publication include `aeon` 0.3.0 and
 `tsml` 0.2.1. The code in this repository has since been updated for newer versions,
 so to run the code from that time use the `tsml-eval` repository at the last commit
-which used these versions. This requires Python 3.8 to 3.11. Results from this setup
+which used these versions. This requires Python 3.8 to 3.10. Results from this setup
 are close to the published results files but may not match them exactly.
 
     git clone https://github.com/time-series-machine-learning/tsml-eval.git
@@ -98,13 +98,15 @@ was generated on Windows, so `pywin32`, `tensorflow-intel`, `ansicon` and `jinxe
 should be removed on other operating systems.
 
 At the time of publication, RIST required the `pycatch22` and `pyfftw` packages. To
-install these, run:
+install the publication-era versions, run:
 
-    pip install pycatch22 pyfftw
+    pip install pycatch22==0.4.2 pyfftw==0.13.1
 
-This can be unstable on some setups. If you cannot install these packages, they can
-be disabled in the publication version by editing the classifier parameters (this
-will change the results produced) i.e.
+Installing newer `pycatch22` releases (`>=1.0`) changes feature outputs on
+near-constant transformed subseries and can affect linear models such as
+`RIST-RidgeCV`. Building these packages can also be unstable on some setups. If you
+cannot install them, they can be disabled in the publication version by editing the
+classifier parameters (this will change the results produced) i.e.
 
     RISTClassifier(use_pycatch22=False, use_pyfftw=False)
 

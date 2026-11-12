@@ -49,7 +49,7 @@ def _set_rist_classifier(
         from aeon.classification.shapelet_based import RDSTClassifier
 
         return RDSTClassifier(random_state=random_state)
-    elif c == c == "rstsfclassifier" or c == "rstsf" or c == "r-stsf":
+    elif c == "rstsfclassifier" or c == "rstsf" or c == "r-stsf":
         from aeon.classification.interval_based import RSTSF
 
         return RSTSF(
@@ -130,11 +130,6 @@ def _set_rist_classifier(
             row_std,
         )
 
-        def sqrt_times_15_plus_5_mv(X):
-            return int(
-                np.sqrt(X.shape[2]) * np.sqrt(X.shape[1]) * 15 + 5
-            )  # pragma: no cover
-
         interval_features = [
             Catch22(outlier_norm=True, replace_nans=True),
             row_mean,
@@ -156,9 +151,13 @@ def _set_rist_classifier(
         return RandomIntervalClassifier(
             random_state=random_state,
             n_jobs=n_jobs,
-            n_intervals=sqrt_times_15_plus_5_mv,
+            n_intervals=_sqrt_times_15_plus_5_mv,
             features=interval_features,
             series_transformers=series_transformers,
             estimator=ExtraTreesClassifier(n_estimators=500, criterion="entropy"),
             **kwargs,
         )
+
+
+def _sqrt_times_15_plus_5_mv(X):
+    return int(np.sqrt(X.shape[2]) * np.sqrt(X.shape[1]) * 15 + 5)
