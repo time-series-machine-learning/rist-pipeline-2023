@@ -82,7 +82,7 @@ new releases.
 The dependency versions recorded at the time of publication include `aeon` 0.3.0 and
 `tsml` 0.2.1. The code in this repository has since been updated for newer versions,
 so to run the code from that time use the `tsml-eval` repository at the last commit
-which used these versions. This requires Python 3.8 to 3.10. Results from this setup
+which used these versions. This requires Python 3.9 or 3.10. Results from this setup
 are close to the published results files but may not match them exactly.
 
     git clone https://github.com/time-series-machine-learning/tsml-eval.git
