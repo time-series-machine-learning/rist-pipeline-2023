@@ -74,10 +74,8 @@ Running either script without arguments runs ROCKET on a small example dataset
 included with `tsml-eval` and writes to `test_output/`.
 
 The code in this repository was last checked in November 2026 with `tsml-eval` 0.7.0,
-`aeon` 1.5.0 and `tsml` 0.10.0 on Python 3.12. Note that `aeon` 1.5.0 raises a
-variance validation error (`std <= 1e-7`) for `RIST` and `DrCIF` on datasets where
-transformed subseries have near-zero variance (such as `ItalyPowerDemand` and
-`Covid3Month`). It is not actively maintained against new releases.
+`aeon` 1.5.0 and `tsml` 0.10.0 on Python 3.12. It is not actively maintained against
+new releases.
 
 ### As published
 

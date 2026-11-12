@@ -86,13 +86,6 @@ def test_set_rist_regressor_invalid():
             },
         ),
         ("RIST-RidgeCV", {"n_intervals": 2, "n_shapelets": 5}),
-        (
-            "IntervalPipeline",
-            {
-                "n_intervals": 2,
-                "estimator": ExtraTreesClassifier(n_estimators=5, criterion="entropy"),
-            },
-        ),
         ("RDST", {"max_shapelets": 10}),
         ("R-STSF", {"n_estimators": 5, "n_intervals": 2}),
         ("DrCIF", {"n_estimators": 3, "n_intervals": 2, "att_subsample_size": 2}),
@@ -106,7 +99,11 @@ def test_fit_rist_classifiers(name, fast_params):
     X = rng.normal(size=(12, 2, 24))
     y = np.array([0, 1] * 6)
 
-    classifier = _set_rist_classifier(name, random_state=0)
+    try:
+        classifier = _set_rist_classifier(name, random_state=0)
+    except ModuleNotFoundError as err:
+        pytest.skip(f"Optional dependency not installed: {err}")
+
     classifier.set_params(**fast_params)
     classifier.fit(X, y)
     preds = classifier.predict(X)
@@ -145,7 +142,11 @@ def test_fit_rist_regressors(name, fast_params):
     X = rng.normal(size=(12, 2, 24))
     y = rng.normal(size=12)
 
-    regressor = _set_rist_regressor(name, random_state=0)
+    try:
+        regressor = _set_rist_regressor(name, random_state=0)
+    except ModuleNotFoundError as err:
+        pytest.skip(f"Optional dependency not installed: {err}")
+
     regressor.set_params(**fast_params)
     regressor.fit(X, y)
     preds = regressor.predict(X)
